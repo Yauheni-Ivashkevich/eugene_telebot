@@ -1,14 +1,15 @@
 import telebot
 import config
 
-
 bot = telebot.TeleBot(config.TOKEN)
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('Привет', 'Пока')
 
+
 @bot.message_handler(commands=['start', 'go', 'help'])
 def start_message(message):
     bot.send_message(message.chat.id, 'Приветствую, Вы решили мне написать?', reply_markup=keyboard1)
+
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
@@ -29,5 +30,5 @@ def send_text(message):
 def sticker_id(message):
     print(message)
 
-bot.polling()
 
+bot.polling()
