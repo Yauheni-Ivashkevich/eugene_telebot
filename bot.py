@@ -8,7 +8,7 @@ keyboard1.row('Привет', 'Пока')
 
 @bot.message_handler(commands=['start', 'go', 'help'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Приветствую, Вы решили мне написать?', reply_markup=keyboard1)
+    bot.send_message(message.chat.id, 'Приветствую, дорогой друг, Вы решили мне написать?', reply_markup=keyboard1)
 
 
 @bot.message_handler(content_types=['text'])
