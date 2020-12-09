@@ -57,7 +57,9 @@ def reg_age(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
     if call.data == "yes": #call.data это callback_data, которую мы указали при объявлении кнопки
-        bot.send_message(call.message.chat.id, 'Приятно познакомиться! Не забывайте про нас!') #код сохранения данных, или их обработки
+        bot.send_message(call.message.chat.id, 'Приятно познакомиться! ') #код сохранения данных, или их обработки
+        bot.send_message(call.message.chat.id, 'Безусловно, жизнь есть жизнь, и в ней всему есть место!')
+        bot.send_message(call.message.chat.id, 'Но, не забывайте про нас! ')
         bot.send_message(call.message.chat.id, 'Всего хорошего! : )')
         bot.send_sticker(call.message.chat.id, 'CAACAgIAAxkBAANiX8rBH9xFQJxek_aiof8d76-7GHkAAtQIAAIItxkCBaNkOqPpyIoeBA')
     elif call.data == "no":
