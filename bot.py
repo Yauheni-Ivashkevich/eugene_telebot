@@ -64,9 +64,9 @@ def callback_worker(call):
         bot.send_sticker(call.message.chat.id, 'CAACAgIAAxkBAANiX8rBH9xFQJxek_aiof8d76-7GHkAAtQIAAIItxkCBaNkOqPpyIoeBA')
     elif call.data == "no":
         bot.send_message(call.message.chat.id, 'Попробуем еще раз!')
-        bot.send_sticker(call.message.chat.id, 'AAMCAgADGQEAAgTcX9KA5b5MxgGjDTO-fR-ojV7LH5AAApkIAAIItxkCU4nZ3lcmuhMTqjkPAAQBAAdtAAO8NgACHgQ')
         bot.send_message(call.message.chat.id, 'Привет! Давай познакомимся! Как тебя зовут?')
         bot.register_next_step_handler(call.message, reg_name)
+        bot.send_sticker(call.message.chat.id, 'AAMCAgADGQEAAgTcX9KA5b5MxgGjDTO-fR-ojV7LH5AAApkIAAIItxkCU4nZ3lcmuhMTqjkPAAQBAAdtAAO8NgACHgQ')
 
 # @bot.message_handler(content_types=['sticker'])
 # def sticker_id(message):
