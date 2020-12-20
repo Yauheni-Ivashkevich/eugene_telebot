@@ -21,7 +21,7 @@ def echo_all(message):
     elif message.text.lower() == "hi":
         bot.reply_to(message, "Hi again! Dear friend! Touch /reg you are welcome")
     elif message.text == "/reg":
-        bot.send_message(message.from_user.id, "Давай познакомимся! Как тебя зовут?")
+        bot.send_message(message.from_user.id, "Давай познакомимся, друг! Как тебя зовут?")
         bot.register_next_step_handler(message, reg_name)
     else:
         bot.send_message(message.from_user.id, "Напиши /reg")
