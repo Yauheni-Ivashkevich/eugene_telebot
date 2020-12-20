@@ -11,13 +11,13 @@ age = 0
 
 @bot.message_handler(commands=["start", "go", "help"])
 def start_message(message):
-    bot.send_message(message.chat.id, "Приветствую, дорогой друг, очень приятно, что решил мне написать?")
+    bot.send_message(message.chat.id, "Приветствую, дорогой друг, приятно, что решил мне написать?")
 
 
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
     if message.text.lower() == "Привет":
-        bot.reply_to(message, "Привет дорогой друг! Нажми пожалуйста /reg")
+        bot.reply_to(message, "Привет дорогой друг! Нажми пожалуйста /reg Хорошо?")
     elif message.text.lower() == "hi":
         bot.reply_to(message, "Hi again! Dear friend! Touch /reg you are welcome")
     elif message.text == "/reg":
@@ -68,7 +68,7 @@ def callback_worker(call):
     if (call.data == "yes"):  # call.data это callback_data, которую мы указали при объявлении кнопки
         bot.send_message(call.message.chat.id, "Приятно познакомиться! ")  # код сохранения данных, или их обработки
         bot.send_message(call.message.chat.id, "Безусловно, жизнь есть жизнь, и в ней всему есть место!")
-        bot.send_message(call.message.chat.id, "Но, не забывайте про нас! ")
+        bot.send_message(call.message.chat.id, "Но, не забывайте про нас! Вместе мы достигнем многого! ")
         bot.send_message(call.message.chat.id, "Всего хорошего, дорогой друг! : )")
         bot.send_sticker(call.message.chat.id, "CAACAgIAAxkBAANiX8rBH9xFQJxek_aiof8d76-7GHkAAtQIAAIItxkCBaNkOqPpyIoeBA",)
     elif call.data == "no":
