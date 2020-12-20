@@ -24,7 +24,7 @@ def echo_all(message):
         bot.send_message(message.from_user.id, "Давай познакомимся, друг! Как тебя зовут?")
         bot.register_next_step_handler(message, reg_name)
     else:
-        bot.send_message(message.from_user.id, "Напиши /reg")
+        bot.send_message(message.from_user.id, "Напиши пожалуйста /reg")
         bot.send_sticker(
             message.chat.id,
             "CAACAgIAAxkBAAIBK1_Lyk4hPz5Nki7gu6EV3-IMqfK6AALWCAACCLcZAoU9GYC_TH6JHgQ",
