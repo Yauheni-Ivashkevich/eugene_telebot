@@ -11,7 +11,7 @@ age = 0
 
 @bot.message_handler(commands=["start", "go", "help"])
 def start_message(message):
-    bot.send_message(message.chat.id, "Приветствую, дорогой друг, решил мне написать?")
+    bot.send_message(message.chat.id, "Приветствую, дорогой друг, очень приятно, что решил мне написать?")
 
 
 @bot.message_handler(func=lambda m: True)
@@ -21,7 +21,7 @@ def echo_all(message):
     elif message.text.lower() == "hi":
         bot.reply_to(message, "Hi again! Dear friend! Touch /reg you are welcome")
     elif message.text == "/reg":
-        bot.send_message(message.from_user.id, "Давай познакомимся, друг! Как тебя зовут?")
+        bot.send_message(message.from_user.id, "Давай познакомимся! Как тебя зовут?")
         bot.register_next_step_handler(message, reg_name)
     else:
         bot.send_message(message.from_user.id, "Напиши пожалуйста /reg")
