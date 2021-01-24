@@ -11,7 +11,7 @@ age = 0
 
 @bot.message_handler(commands=["start", "go", "help"])
 def start_message(message):
-    bot.send_message(message.chat.id, "Приветствую, дорогой друг, приятно, что ты решил мне написать! Продолжай в томже духе!")
+    bot.send_message(message.chat.id, "Приветствую, дорогой друг, приятно, что ты решил мне написать! Это ништякс!")
 
 
 @bot.message_handler(func=lambda m: True)
