@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 import telebot
 from pyowm import OWM
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 load_dotenv()
 
@@ -30,6 +31,27 @@ def handle_start_help(message):
 @bot.message_handler(content_types=['document', 'audio'])
 def handle_document_audio(message):
     pass
+
+
+def gen_markup():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    markup.add(InlineKeyboardButton("Yes", callback_data="cb_yes"),
+               InlineKeyboardButton("No", callback_data="cb_no"))
+    return markup
+
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_query(call):
+    if call.data == "cb_yes":
+        bot.answer_callback_query(call.id, "Answer is Yes")
+    elif call.data == "cb_no":
+        bot.answer_callback_query(call.id, "Answer is No")
+
+
+@bot.message_handler(func=lambda message: True)
+def message_handler(message):
+    bot.send_message(message.chat.id, "Yes/no?", reply_markup=gen_markup())
 
 
 def get_weather(message):
