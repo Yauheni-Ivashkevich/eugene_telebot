@@ -2,9 +2,6 @@
 import telebot
 from pyowm import OWM
 
-# bot token from @BotFather
-TOKEN = "2146819907:AAGcW3jIDaTSYjl0DcVMOi81GpBradaTDVY"
-API_KEY = "a42a5fb479fd085ee548319b6976642a"
 
 bot = telebot.TeleBot(TOKEN)
 
