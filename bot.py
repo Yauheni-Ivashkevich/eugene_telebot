@@ -19,7 +19,7 @@ def get_weather(message):
     city = message.text
     try:
         w = weather(city)
-        bot.send_message(message.from_user.id, f'В городе {city} сейчас {round(w[0]["temp"])} градусов,',
+        bot.send_message(message.from_user.id, f'В городе {city} сейчас {round(w[0]["temp"])} градусов,'
                                                f'чувствуется как {round(w[0]["feels_like"])} градусов')
         bot.send_message(message.from_user.id, w[1])
         bot.send_message(message.from_user.id, 'Доброго времен суток! Введите название города')
