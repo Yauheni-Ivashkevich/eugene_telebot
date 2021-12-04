@@ -1,9 +1,9 @@
-import config
+from config import*
 import telebot
 from pyowm import OWM
 
 
-bot = telebot.TeleBot(config.TOKEN)
+bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(content_types=['text'])
@@ -36,7 +36,7 @@ def get_location(lat, lon):
 
 
 def weather(city: str):
-    owm = OWM(config.API_KEY)
+    owm = OWM(API_KEY)
     mgr = owm.weather_manager()
     observation = mgr.weather_at_place(city)
     weather = observation.weather
