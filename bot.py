@@ -20,6 +20,18 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Напиши /weather чтобы узнать погоду")
 
 
+# Обработчик команд '/start' и '/help'.
+@bot.message_handler(commands=['start', 'help'])
+def handle_start_help(message):
+    pass
+
+
+# Обработчик для документов и аудиофайлов
+@bot.message_handler(content_types=['document', 'audio'])
+def handle_document_audio(message):
+    pass
+
+
 def get_weather(message):
     city = message.text
     try:
