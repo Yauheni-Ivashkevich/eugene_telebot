@@ -1,7 +1,12 @@
-# from config import*
+import os
+from dotenv import load_dotenv
 import telebot
 from pyowm import OWM
 
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+API_KEY = os.getenv("API_KEY")
 
 bot = telebot.TeleBot(TOKEN)
 
