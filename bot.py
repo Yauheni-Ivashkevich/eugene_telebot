@@ -21,18 +21,6 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Напиши /weather чтобы узнать погоду")
 
 
-# Обработчик команд '/start' и '/help'.
-@bot.message_handler(commands=['start', 'help'])
-def handle_start_help(message):
-    pass
-
-
-# Обработчик для документов и аудиофайлов
-@bot.message_handler(content_types=['document', 'audio'])
-def handle_document_audio(message):
-    pass
-
-
 def gen_markup():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
@@ -52,6 +40,18 @@ def callback_query(call):
 @bot.message_handler(func=lambda message: True)
 def message_handler(message):
     bot.send_message(message.chat.id, "Yes/no?", reply_markup=gen_markup())
+
+
+# Обработчик команд '/start' и '/help'.
+@bot.message_handler(commands=['start', 'help'])
+def handle_start_help(message):
+    pass
+
+
+# Обработчик для документов и аудиофайлов
+@bot.message_handler(content_types=['document', 'audio'])
+def handle_document_audio(message):
+    pass
 
 
 def get_weather(message):
