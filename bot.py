@@ -27,6 +27,7 @@ def url(message):
     btn_my_site = InlineKeyboardButton(text='Сайт ', url='https://yandex.by/pogoda/minsk')
     markup.add(btn_my_site)
     bot.send_message(message.chat.id, "Всегда актуальный прогноз погоды в городе Минск", reply_markup=markup)
+    return markup
 
 
 def gen_markup():
