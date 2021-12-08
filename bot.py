@@ -21,6 +21,14 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Напиши /weather чтобы узнать погоду")
 
 
+@bot.message_handler(commands=['url'])
+def url(message):
+    markup = InlineKeyboardMarkup()
+    btn_my_site = InlineKeyboardButton(text='Сайт ', url='https://yandex.by/pogoda/minsk')
+    markup.add(btn_my_site)
+    bot.send_message(message.chat.id, "Всегда актуальный прогноз погоды в городе Минск", reply_markup=markup)
+
+
 def gen_markup():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
