@@ -27,7 +27,6 @@ def url(message):
     btn_my_site = InlineKeyboardButton(text='Сайт ', url='https://yandex.by/pogoda/minsk')
     markup.add(btn_my_site)
     bot.send_message(message.chat.id, "Всегда актуальный прогноз для Минска", reply_markup=markup)
-    markup.row(btn_my_site)
 
 
 def gen_markup():
@@ -35,7 +34,6 @@ def gen_markup():
     markup.row_width = 2
     markup.add(InlineKeyboardButton("Yes", callback_data="cb_yes"),
                InlineKeyboardButton("No", callback_data="cb_no"))
-    return markup
 
 
 @bot.callback_query_handler(func=lambda call: True)
