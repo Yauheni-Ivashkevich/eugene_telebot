@@ -56,9 +56,9 @@ def handle_start_help(message):
 
 
 # Обработчик для документов и аудиофайлов
-@bot.message_handler(content_types=['document', 'audio'])
-def handle_document_audio(message):
-    pass
+# @bot.message_handler(content_types=['document', 'audio'])
+# def handle_document_audio(message):
+#     pass
 
 
 def get_weather(message):
