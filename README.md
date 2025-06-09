@@ -1,2 +1,2 @@
 ﻿# eugene_telebot
-Telegram bot for weather -  Update
+Telegram bot for weather -  Update today 
